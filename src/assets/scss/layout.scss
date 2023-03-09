@@ -1,0 +1,26 @@
+body{
+  margin: 0;
+}
+
+.layout-box{
+  width: 100vw;
+  height: 100vh;
+}
+
+.layout-top{
+  height: $topHeight;
+  background-color: $bg1;
+}
+
+.layout-sidebar-left{
+  width: 238.5px;
+  height: calc(100vh - $topHeight);
+  background-color: $bg1;
+}
+
+.layout-main{
+  box-sizing: border-box;
+  padding: 0 10px;
+  background-color: aliceblue;
+}
+
