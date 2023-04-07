@@ -2,10 +2,10 @@ let path = require("path")
 const { defineConfig } = require("@vue/cli-service")
 let developmentPath = "./" //开发环境-npm run serve时引用文件路径
 let productionPath = "./" //生产环境-npm run build打包后引用文件路径
-const AutoImport = require('unplugin-auto-import/webpack')
-const Components = require('unplugin-vue-components/webpack')
+const AutoImport = require('unplugin-auto-import/webpack') //自动导入库
+const Components = require('unplugin-vue-components/webpack') //自动导入组件
 const Icons = require("unplugin-icons/webpack") 
-const IconsResolver = require('unplugin-icons/resolver') 
+const IconsResolver = require('unplugin-icons/resolver') //自动引入icon
 const { ElementPlusResolver } = require("unplugin-vue-components/resolvers")
 
 function resolve(dir) {

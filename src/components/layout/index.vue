@@ -1,40 +1,32 @@
 <template>
   <div class="layout-box">
-    <el-row>
-      <el-col :span="3">
-        <div class="layout-top"></div>
-      </el-col>
-      <el-col :span="21">
-        <div class="layout-top">
-          <el-row>
-            <el-col :span="1">
-              <div style="line-height: 60px; color: #fff">
-                <el-icon><Menu /></el-icon>
-              </div>
-            </el-col>
-          </el-row>
-        </div>
-      </el-col>
+    <el-row class="layout_x">
+      <div class="layout-icon layout-sidebar-width">
+        <el-icon :size="32">
+          <i-twemoji:mirror-ball />
+        </el-icon>
+      </div>
+      <div class="layout-top">
+        <el-icon><Menu /></el-icon>
+      </div>
     </el-row>
-    <el-row>
-      <el-col :span="3">
-        <div class="layout-sidebar-left">
-          <router-link to="">
-            <sidebarItem />
-          </router-link>
-        </div>
-      </el-col>
-      <el-col :span="21" class="layout-main">
+    <el-row class="layout_x">
+      <div class="layout-sidebar-left layout-sidebar-width">
+        <router-link to="">
+          <sidebarItem />
+        </router-link>
+      </div>
+      <div class="layout-main">
         <router-view></router-view>
-      </el-col>
+      </div>
     </el-row>
   </div>
 </template>
 
 <script setup>
-import sidebarItem from "./sidebarItem.vue"
+import sidebarItem from './sidebarItem.vue';
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/layout.scss";
+@import '@/assets/scss/layout.scss';
 </style>
