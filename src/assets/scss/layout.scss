@@ -61,6 +61,16 @@ body {
   background-color: $bg1;
 }
 
+.layout-sidebar-left_1 {
+  height: calc(100vh - $topHeight);
+  background-color: $bg1;
+}
+
 .layout-main {
+  flex: 1 1 auto;
+  background-color: bisque;
   padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

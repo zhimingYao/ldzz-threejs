@@ -6,11 +6,9 @@
           <svg-icon iconClass="chat" className="icon" />
         </div>
       </el-col>
-      <el-col :span="14"></el-col>
+      <el-col :span="14">1324123412</el-col>
       <el-col :span="4"></el-col>
     </el-row>
   </div>
 </template>
-<script setup>
-
-</script>
+<script setup></script>

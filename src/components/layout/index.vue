@@ -1,7 +1,7 @@
 <template>
   <div class="layout-box">
     <el-row class="layout_x">
-      <div class="layout-icon layout-sidebar-width">
+      <div class="layout-icon layout-sidebar-width" @click="handlerShow">
         <el-icon :size="32">
           <i-twemoji:mirror-ball />
         </el-icon>
@@ -24,7 +24,12 @@
 </template>
 
 <script setup>
-import sidebarItem from './sidebarItem.vue';
+let show = ref(false);
+
+const handlerShow = () => {
+  console.log(show.value);
+  show.value = !show.value;
+};
 </script>
 
 <style lang="scss">

@@ -16,7 +16,7 @@ module.exports = defineConfig({
   configureWebpack: {
     plugins: [
       AutoImport({
-        import: ["vue", "vue-router", "pinia"],
+        imports: ["vue", "vue-router", "pinia"],
         // 第三方组件库的解析器
         resolvers: [ElementPlusResolver()]
       }),
