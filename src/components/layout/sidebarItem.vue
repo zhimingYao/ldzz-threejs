@@ -1,14 +1,28 @@
 <template>
   <div class="item">
-    <el-row :gutter="20">
-      <el-col :span="6">
-        <div>
-          <svg-icon iconClass="chat" className="icon" />
-        </div>
-      </el-col>
-      <el-col :span="14">1324123412</el-col>
-      <el-col :span="4"></el-col>
-    </el-row>
+    <div class="icon"></div>
+    <div class="">1324123412</div>
+    <div></div>
   </div>
 </template>
 <script setup></script>
+
+<style lang="scss">
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  color: $text1;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px 0 #525252;
+  &:hover {
+    color: $text2;
+    background-color: rgba($color: #525252, $alpha: 1);
+    border: 2px solid rgba($color: #525252, $alpha: 1);
+  }
+
+  .icon {
+  }
+}
+</style>
