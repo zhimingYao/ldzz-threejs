@@ -11,8 +11,9 @@ const routes = [
       {
         path:"/home",
         name:"home",
-        i18n:{
-          title:""
+        meta:{
+          title:"",
+          icon: "",
         },
         component:()=>import('@/views/home/index.vue')
       }
@@ -21,7 +22,7 @@ const routes = [
   {
     path:'/user',
     name:"user",
-    i18n:{
+    meta:{
       title:""
     },
     component:()=>import('@/views/user/index.vue')
@@ -29,7 +30,7 @@ const routes = [
   {
     path:'/login',
     name:"login",
-    i18n:{
+    meta:{
       title:""
     },
     component:()=>import('@/views/user/login.vue')
@@ -37,7 +38,7 @@ const routes = [
   {
     path:'/register',
     name:"register",
-    i18n:{
+    meta:{
       title:""
     },
     component:()=>import('@/views/user/register.vue')
@@ -45,15 +46,7 @@ const routes = [
   {
     path:'/error',
     name:"error",
-    i18n:{
-      title:""
-    },
-    component:()=>import('@/views/user/register.vue')
-  },
-  {
-    path:'/error',
-    name:"error",
-    i18n:{
+    meta:{
       title:""
     },
     component:()=>import('@/views/user/register.vue')

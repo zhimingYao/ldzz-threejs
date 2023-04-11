@@ -4,8 +4,9 @@
   </router-link>
 </template>
 
-<script>
-export default {};
+<script setup>
+import  routes from '@/router/index';
+console.log(routes);
 </script>
 
 <style></style>

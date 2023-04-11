@@ -28,7 +28,9 @@ module.exports = defineConfig({
         // 解析的 UI 组件库，这里以 Element Plus 和 Ant Design Vue 为例
         resolvers: [
           ElementPlusResolver(),
-          IconsResolver()
+          IconsResolver({
+            pre
+          })
         ]
       }),
       Icons({
