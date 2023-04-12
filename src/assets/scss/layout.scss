@@ -70,11 +70,7 @@ a {
 .layout-sidebar-left {
   height: calc(100vh - $topHeight);
   background-color: $bg1;
-}
-
-.layout-sidebar-left_1 {
-  height: calc(100vh - $topHeight);
-  background-color: $bg1;
+  overflow: hidden;
 }
 
 .layout-main {

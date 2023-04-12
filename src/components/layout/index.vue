@@ -22,6 +22,8 @@
 </template>
 
 <script setup>
+const isFold = ref(false)
+provide('isFold',isFold)
 // 展开缩小侧边栏
 const handlerSidebarShow = () => {
   const w = [...document.getElementsByClassName('layout-sidebar-width')];
