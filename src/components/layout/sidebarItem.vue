@@ -1,18 +1,34 @@
 <template>
   <div class="item">
     <div class="icon">
-      <el-icon :size="32" color="#fff">
-        {{}}
+      <el-icon :size="24" color="#fff">
+        <component :is="props.icon"></component>
       </el-icon>
     </div>
-    <div class="">1324123412</div>
-    <div>
-      <el-icon><ArrowDown /></el-icon>
+    <div class="ctx" v-if="!props.isFold">
+      <div class="title">{{ props.title }}</div>
+      <div class="arrow">
+        <el-icon><ArrowDown /></el-icon>
+      </div>
     </div>
   </div>
 </template>
 <script setup>
-const icon = ref('material-symbols:home-outline-rounded');
+const props = defineProps({
+  icon: {
+    type: String,
+    default: 'Search',
+  },
+  title: {
+    tyep: String,
+    default: 'woshi',
+  },
+  isFold: {
+    type: Boolean,
+    default: false,
+  },
+});
+console.log(props);
 </script>
 
 <style lang="scss">
@@ -24,8 +40,8 @@ const icon = ref('material-symbols:home-outline-rounded');
   color: $text1;
   box-sizing: border-box;
   box-shadow: 0 0 5px 0 #525252;
-  padding: 10px;
   border: 2px solid rgba($color: #525252, $alpha: 1);
+  text-align: center;
 
   &:hover {
     color: $text2;
@@ -34,6 +50,19 @@ const icon = ref('material-symbols:home-outline-rounded');
 
   .icon {
     width: 50px;
+    height: 24px;
+  }
+
+  .ctx {
+    padding: 20px;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .arrow{
+      height: 16px;
+    }
   }
 }
 </style>

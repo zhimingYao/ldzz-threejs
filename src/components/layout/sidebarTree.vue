@@ -1,6 +1,6 @@
 <template>
   <router-link to="">
-    <sidebarItem />
+    <sidebarItem  />
   </router-link>
 </template>
 

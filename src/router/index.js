@@ -12,7 +12,7 @@ const routes = [
         path:"/home",
         name:"home",
         meta:{
-          title:"",
+          title:"主页",
           icon: "",
         },
         component:()=>import('@/views/home/index.vue')

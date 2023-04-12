@@ -13,7 +13,6 @@ let router = createRouter({
   routes,
 });
 const app = createApp(App);
-
 app.use(router).mount('#app');
 
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
