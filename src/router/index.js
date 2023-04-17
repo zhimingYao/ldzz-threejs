@@ -46,7 +46,7 @@ const routes = [
     meta: {
       title: '',
     },
-    component: () => import('@/views/login/login.vue'),
+    component: () => import('@/views/login.vue'),
   },
   {
     path: '/register',
@@ -54,7 +54,7 @@ const routes = [
     meta: {
       title: '',
     },
-    component: () => import('@/views/login/register.vue'),
+    component: () => import('@/views/register.vue'),
   },
   {
     path: '/error',
