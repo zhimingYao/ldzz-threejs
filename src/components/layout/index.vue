@@ -7,7 +7,7 @@
         </el-icon>
       </div>
       <div class="layout-top" @click="handlerSidebarShow">
-        <el-icon size="20"><Menu /></el-icon>
+        <el-icon size="20"><Fold /></el-icon>
       </div>
     </el-row>
     <el-row class="layout_x">
@@ -23,11 +23,11 @@
 
 <script setup>
 //侧边折叠展开
-const isFold = ref(false) 
-provide('isFold',isFold)
+const isFold = ref(false);
+provide('isFold', isFold);
 // 路由选择
-const checkRoute = ref('/home')
-provide('checkRoute',checkRoute)
+const checkRoute = ref('/home');
+provide('checkRoute', checkRoute);
 // 展开缩小侧边栏
 const handlerSidebarShow = () => {
   const w = [...document.getElementsByClassName('layout-sidebar-width')];
@@ -35,12 +35,12 @@ const handlerSidebarShow = () => {
     w.forEach((element) => {
       element.style.width = '60px';
     });
-    isFold.value = true
+    isFold.value = true;
   } else {
     w.forEach((element) => {
       element.style.width = '250px';
     });
-    isFold.value = false
+    isFold.value = false;
   }
 };
 </script>

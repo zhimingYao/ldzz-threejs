@@ -1,0 +1,16 @@
+# 目录
+node_modules/
+dist/
+public/
+.husky/
+bin/
+.github/
+
+
+# 编辑器
+.idea
+.vscode
+
+
+package-lock.json
+yarn.lock

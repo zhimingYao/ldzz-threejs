@@ -17,6 +17,38 @@ const routes = [
         component: () => import('@/views/home/index.vue'),
       },
       {
+        path: '/3D',
+        name: '3D',
+        redirect: '/3D/demo',
+        meta: {
+          title: '3D模型',
+          icon: 'Orange',
+          isShow: false,
+        },
+        children: [
+          {
+            path: '/3D/demo',
+            name: 'demo',
+            meta: {
+              title: '测试',
+              icon: 'Document',
+              isShow: false,
+            },
+            component: () => import('@/views/3D/demo/index.vue'),
+          },
+          {
+            path: '/3D/demo1',
+            name: 'demo1',
+            meta: {
+              title: '测试1',
+              icon: 'Document',
+              isShow: false,
+            },
+            component: () => import('@/views/3D/demo1/index.vue'),
+          },
+        ],
+      },
+      {
         path: '/user',
         name: 'user',
         redirect: '/user/info',
