@@ -15,7 +15,9 @@
         <sidebar-tree />
       </div>
       <div class="layout-main">
-        <router-view></router-view>
+        <transition name="fade">
+          <router-view ></router-view>
+        </transition>
       </div>
     </el-row>
   </div>

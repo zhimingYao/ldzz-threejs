@@ -3,12 +3,12 @@
     <div :class="{ item: true, checked: item.path === checkRoute }" @click="handlerClick()">
       <div class="icon">
         <el-icon :size="24">
-          <component :is="icon"></component>
+          <component :is="item.meta.icon"></component>
         </el-icon>
       </div>
       <div class="ctx" v-show="!isFold">
-        <div class="title">{{ title }}</div>
-        <div :class="{ arrowDown: true, arrowRight: !isShow }">
+        <div class="title">{{ item.meta.title }}</div>
+        <div :class="{ arrowDown: true, arrowRight: !item.meta.isShow }">
           <el-icon><ArrowDown /></el-icon>
         </div>
       </div>
@@ -19,11 +19,11 @@
       <div :class="{ item: true, checked: item.path === checkRoute }" @click="handlerClick()">
         <div class="icon">
           <el-icon :size="24">
-            <component :is="icon"></component>
+            <component :is="item.meta.icon"></component>
           </el-icon>
         </div>
         <div class="ctx" v-show="!isFold">
-          <div class="title">{{ title }}</div>
+          <div class="title">{{ item.meta.title }}</div>
         </div>
       </div>
     </router-link>
@@ -35,21 +35,17 @@ const props = defineProps({
     type: Object,
     default: () => {
       return {};
-    },
-  },
+    }
+  }
 });
 const emit = defineEmits(['getIsShow']);
 const isFold = inject('isFold');
 const item = reactive(props.item);
-const icon = ref(item.meta.icon);
-const title = ref(item.meta.title);
-const isShow = ref(item.meta.isShow);
 const hasChildren = ref(item.children && item.children.length !== 0);
 const checkRoute = inject('checkRoute');
 const handlerClick = () => {
   // console.log(item);
   if (hasChildren.value) {
-    isShow.value = !isShow.value;
     emit('getIsShow', item);
   } else {
     checkRoute.value = item.path;
@@ -66,16 +62,12 @@ const handlerClick = () => {
   color: $text1;
   box-sizing: border-box;
   text-align: center;
-  border-bottom: 1px solid #525252;
   border-radius: 10px;
-  box-shadow: 0px 0px 2px 1px $cw1;
+  box-shadow: 0px 0px 2px 0px $cw3;
   position: relative;
   z-index: 1;
   &:hover {
     color: $text2;
-  }
-  &:first-child {
-    border-top: 1px solid #525252;
   }
   .icon {
     width: 60px;
@@ -103,7 +95,7 @@ const handlerClick = () => {
 
 .checked {
   color: $text2;
-  background-color: rgba($color: #525252, $alpha: 1);
-  box-shadow: inset 0 0 2px 1px #525252;
+  background-color: $c4;
+  box-shadow: 0px 0px 2px 0px $cw3;
 }
 </style>
