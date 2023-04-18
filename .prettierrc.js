@@ -5,12 +5,12 @@ module.exports = {
   useTabs: false,
   singleQuote: true,
   quoteProps: 'preserve',
-  trailingComma: 'none',
+  trailingComma: 'es5',
   bracketSpacing: true,
   bracketSameLine: false,
   arrowParens: 'avoid',
   endOfLine: 'lf',
   htmlWhitespaceSensitivity: 'css',
   vueIndentScriptAndStyle: false,
-  singleAttributePerLine: false,
+  singleAttributePerLine: false
 };

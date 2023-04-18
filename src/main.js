@@ -10,10 +10,13 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 
 let router = createRouter({
   history: createWebHashHistory(),
-  routes,
+  routes
 });
+
+const pinia = createPinia();
+
 const app = createApp(App);
-app.use(router).mount('#app');
+app.use(router).use(pinia).mount('#app');
 
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component);

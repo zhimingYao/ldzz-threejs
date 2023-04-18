@@ -30,30 +30,32 @@
   </div>
 </template>
 <script setup>
+import { useLayoutStore } from '../../store/layout';
 const props = defineProps({
   item: {
     type: Object,
     default: () => {
       return {};
     }
-  }
+  },
+  grade: Number
 });
 const emit = defineEmits(['getIsShow']);
-const isFold = inject('isFold');
 const item = reactive(props.item);
 const hasChildren = ref(item.children && item.children.length !== 0);
-const checkRoute = inject('checkRoute');
+const store = useLayoutStore();
+const { checkRoute, isFold } = storeToRefs(store);
 const handlerClick = () => {
   // console.log(item);
   if (hasChildren.value) {
     emit('getIsShow', item);
   } else {
-    checkRoute.value = item.path;
+    store.setCheckRoute(item.path)
   }
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .item {
   display: flex;
   justify-content: space-between;

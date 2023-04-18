@@ -15,34 +15,33 @@
         <sidebar-tree />
       </div>
       <div class="layout-main">
-        <transition name="fade">
-          <router-view ></router-view>
-        </transition>
+        <router-view v-slot="{ Component }">
+          <transition name="slide-right">
+            <component :is="Component" />
+          </transition>
+        </router-view>
       </div>
     </el-row>
   </div>
 </template>
 
 <script setup>
-//侧边折叠展开
-const isFold = ref(false);
-provide('isFold', isFold);
-// 路由选择
-const checkRoute = ref('/home');
-provide('checkRoute', checkRoute);
+import { useLayoutStore } from '../../store/layout';
+const store = useLayoutStore();
+store.setIsFold(false);
 // 展开缩小侧边栏
 const handlerSidebarShow = () => {
   const w = [...document.getElementsByClassName('layout-sidebar-width')];
   if (w[0].offsetWidth === 250) {
-    w.forEach((element) => {
+    w.forEach(element => {
       element.style.width = '60px';
     });
-    isFold.value = true;
+    store.setIsFold(true);
   } else {
-    w.forEach((element) => {
+    w.forEach(element => {
       element.style.width = '250px';
     });
-    isFold.value = false;
+    store.setIsFold(false);
   }
 };
 </script>
