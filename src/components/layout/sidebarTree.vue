@@ -24,11 +24,11 @@ const props = defineProps({
 const sidebarMenu = reactive(props.sidebarMenu);
 const store = useLayoutStore();
 const { checkRoute } = storeToRefs(store);
-console.log(checkRoute);
+// console.log(checkRoute);
 const InitMenu = () => {
   sidebarMenu.forEach(item => {
     if (checkRoute.value.includes(item.path) && item.children && item.children.length !== 0) {
-      console.log('匹配到');
+      // console.log('匹配到');
       item.meta.isShow = true;
     } else {
       item.meta.isShow = false;

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { getLocalStorage, setLocalStorage } from '@/tools/storage';
+import { getLocalStorage, setLocalStorage } from '@/uilts/storage';
 
 export const useLayoutStore = defineStore('layout', {
   state: () => {

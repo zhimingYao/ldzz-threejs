@@ -6,8 +6,8 @@
           <i-twemoji:mirror-ball />
         </el-icon>
       </div>
-      <div class="layout-top" @click="handlerSidebarShow">
-        <el-icon size="20"><Fold /></el-icon>
+      <div class="layout-top">
+        <el-icon size="20" @click="handlerSidebarShow"><Fold /></el-icon>
       </div>
     </el-row>
     <el-row class="layout_x">
@@ -27,8 +27,11 @@
 
 <script setup>
 import { useLayoutStore } from '../../store/layout';
+import { useRoute } from 'vue-router';
+const currentUrl = useRoute().path;
 const store = useLayoutStore();
-store.setIsFold(false);
+store.setCheckRoute(currentUrl);
+// store.setIsFold(false);
 // 展开缩小侧边栏
 const handlerSidebarShow = () => {
   const w = [...document.getElementsByClassName('layout-sidebar-width')];
@@ -44,6 +47,21 @@ const handlerSidebarShow = () => {
     store.setIsFold(false);
   }
 };
+const initSidebaWidth = () => {
+  const w = [...document.getElementsByClassName('layout-sidebar-width')];
+  if (store.isFold) {
+    w.forEach(element => {
+      element.style.width = '60px';
+    });
+  } else {
+    w.forEach(element => {
+      element.style.width = '250px';
+    });
+  }
+};
+onMounted(() => {
+  initSidebaWidth();
+});
 </script>
 
 <style lang="scss">

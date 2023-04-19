@@ -36,21 +36,22 @@ const props = defineProps({
     type: Object,
     default: () => {
       return {};
-    }
+    },
   },
-  grade: Number
+  grade: Number,
 });
 const emit = defineEmits(['getIsShow']);
 const item = reactive(props.item);
 const hasChildren = ref(item.children && item.children.length !== 0);
 const store = useLayoutStore();
 const { checkRoute, isFold } = storeToRefs(store);
+console.log(isFold);
 const handlerClick = () => {
   // console.log(item);
   if (hasChildren.value) {
     emit('getIsShow', item);
   } else {
-    store.setCheckRoute(item.path)
+    store.setCheckRoute(item.path);
   }
 };
 </script>
