@@ -15,11 +15,7 @@
         <sidebar-tree />
       </div>
       <div class="layout-main">
-        <router-view v-slot="{ Component }">
-          <transition name="slide-right">
-            <component :is="Component" />
-          </transition>
-        </router-view>
+        <router-view></router-view>
       </div>
     </el-row>
   </div>

@@ -2,7 +2,12 @@
   <div class="sidebarTree">
     <div class="sidebarItem" v-for="item in sidebarMenu" :key="item.path">
       <sidebarItem :item="item" :grade="grade" @getIsShow="handlerIsShow" />
-      <sidebar-tree v-if="item.meta.isShow && item.children && item.children.length !== 0" :sidebarMenu="item.children" :grade="grade + 1" />
+      <sidebar-tree
+        v-if="item.meta.isShow && item.children && item.children.length !== 0"
+        :sidebarMenu="item.children"
+        :grade="grade + 1"
+        :key="item.path"
+      />
     </div>
   </div>
 </template>
@@ -22,6 +27,7 @@ const props = defineProps({
   },
 });
 const sidebarMenu = reactive(props.sidebarMenu);
+// console.log(sidebarMenu);
 const store = useLayoutStore();
 const { checkRoute } = storeToRefs(store);
 // console.log(checkRoute);
@@ -48,7 +54,7 @@ const handlerIsShow = data => {
 </script>
 
 <style lang="scss">
-.sidebarTree {
+.sidebarItem {
   transition: all 0.5s;
 }
 </style>

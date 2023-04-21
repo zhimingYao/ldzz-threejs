@@ -37,14 +37,14 @@ const routes = [
             component: () => import('@/views/3D/demo/index.vue'),
           },
           {
-            path: '/3D/demo1',
-            name: 'demo1',
+            path: '/3D/study',
+            name: 'study',
             meta: {
-              title: '测试1',
+              title: '研究',
               icon: 'Document',
               isShow: false,
             },
-            component: () => import('@/views/3D/demo1/index.vue'),
+            component: () => import('@/views/3D/study/index.vue'),
           },
         ],
       },

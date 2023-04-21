@@ -1,10 +1,10 @@
-import svgIcon from "./svgIcon/index.vue";
+// import svgIcon from "./svgIcon/index.vue";
 
-let components = [svgIcon];
-export default {
-  install: (app) => {
-    components.forEach(ele =>{
-      app.component(ele.name,ele)
-    })
-  },
-};
+// let components = [svgIcon];
+// export default {
+//   install: (app) => {
+//     components.forEach(ele =>{
+//       app.component(ele.name,ele)
+//     })
+//   },
+// };

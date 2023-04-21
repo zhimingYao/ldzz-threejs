@@ -1,6 +1,6 @@
 <template>
   <div class="hasChildren" v-if="hasChildren">
-    <div :class="{ item: true, checked: item.path === checkRoute }" @click="handlerClick()">
+    <div :class="{ item: true, checked: item.path === checkRoute }" @click="handlerClick()" :style="{ backgroundColor: handlerColor() }">
       <div class="icon">
         <el-icon :size="24">
           <component :is="item.meta.icon"></component>
@@ -31,6 +31,7 @@
 </template>
 <script setup>
 import { useLayoutStore } from '../../store/layout';
+import { colorGeneration } from '@/uilts/tools';
 const props = defineProps({
   item: {
     type: Object,
@@ -45,7 +46,6 @@ const item = reactive(props.item);
 const hasChildren = ref(item.children && item.children.length !== 0);
 const store = useLayoutStore();
 const { checkRoute, isFold } = storeToRefs(store);
-console.log(isFold);
 const handlerClick = () => {
   // console.log(item);
   if (hasChildren.value) {
@@ -53,6 +53,10 @@ const handlerClick = () => {
   } else {
     store.setCheckRoute(item.path);
   }
+};
+const handlerColor = () => {
+  let grade = props.grade;
+  return colorGeneration('#059', grade * 6, 40);
 };
 </script>
 
