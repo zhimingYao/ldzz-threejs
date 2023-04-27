@@ -54,7 +54,5 @@ const handlerIsShow = data => {
 </script>
 
 <style lang="scss">
-.sidebarItem {
-  transition: all 0.5s;
-}
+/* 下面我们会解释这些 class 是做什么的 */
 </style>
