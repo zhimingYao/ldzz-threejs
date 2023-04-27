@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { computed, defineComponent } from '@vue/runtime-core'
+import { computed, defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'svgIcon',

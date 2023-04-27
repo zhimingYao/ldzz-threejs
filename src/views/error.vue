@@ -1,15 +1,11 @@
 <template>
   <div>
-    <h1>the page is a error!</h1>
+    <h1>the page is a error!1324123413</h1>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
-<style>
-
-</style>
+<style></style>
