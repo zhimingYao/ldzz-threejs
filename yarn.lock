@@ -5274,9 +5274,9 @@
     "type-check" "~0.4.0"
 
 "lilconfig@^2.0.3":
-  "integrity" "sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg=="
-  "resolved" "https://registry.npmjs.org/lilconfig/-/lilconfig-2.0.6.tgz"
-  "version" "2.0.6"
+  "integrity" "sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ=="
+  "resolved" "https://registry.npmmirror.com/lilconfig/-/lilconfig-2.1.0.tgz"
+  "version" "2.1.0"
 
 "lines-and-columns@^1.1.6":
   "integrity" "sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg=="
