@@ -2950,7 +2950,7 @@
   "resolved" "https://registry.npmjs.org/commander/-/commander-8.3.0.tgz"
   "version" "8.3.0"
 
-"commitizen@^4.0.3", "commitizen@^4.3.0":
+"commitizen@^4.0.3":
   "integrity" "sha512-H0iNtClNEhT0fotHvGV3E9tDejDeS04sN1veIebsKYGMuGscFaswRoYJKmT3eW85eIJAs0F28bG2+a/9wCOfPw=="
   "resolved" "https://registry.npmmirror.com/commitizen/-/commitizen-4.3.0.tgz"
   "version" "4.3.0"
