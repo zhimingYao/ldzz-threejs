@@ -3,7 +3,7 @@
 const SR_webgl = {};
 
 export function init() {
-  const ele = 14321;
+  const ele = 1;
 }
 
 export default SR_webgl = {};
