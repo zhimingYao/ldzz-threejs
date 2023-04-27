@@ -77,11 +77,6 @@
     "type": "git",
     "url": "git+https://github.com/zhimingYao/ldzz-threejs.git"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -e $GIT_PARAMS"
-    }
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
