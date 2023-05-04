@@ -24,7 +24,7 @@ export const colorGeneration = (color, grade, divide) => {
     divide = 10;
   }
   if (grade > divide) {
-    grade %= divide
+    grade %= divide;
   }
   let opacity = [0.5 - (1 / divide) * grade];
   if (color[0] === '#') {

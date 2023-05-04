@@ -9,14 +9,12 @@ export function createSpace(ele, type, options) {
   this.context = null;
   this.init = init.bind(this);
   this.resize = resize.bind(this);
-
-  this.init();
-
+  this.mainSpaceElementInit = mainSpaceElementInit.bind(this);
   this.resizeObserver = resizeObserver.bind(this)();
 }
 
 // 初始化
-function init() {
+function init(fn) {
   const tip = '抱歉，您的浏览器不支持 canvas 元素（这些内容将会在不支持<canvas>元素的浏览器或是禁用了 JavaScript 的浏览器内渲染并展现）';
   const myCanvas = document.createElement('canvas');
   myCanvas.innerText = tip;
@@ -28,34 +26,36 @@ function init() {
   const ctx = myCanvas.getContext(this.spaceType, this.spaceOptions);
   this.canvasSpace = myCanvas;
   this.context = ctx;
+  this.fn = fn;
 }
 
 // 主空间元素初始化
-function mainSpaceElementInit(fn) {
-  fn()
+function mainSpaceElementInit() {
+  this.fn(this);
 }
 
-// 监听元素resize事件
+// 监听空间resize事件
 function resizeObserver() {
+  const fn = debounce(this.resize, 500);
   const resizeObserver = new ResizeObserver(() => {
-    console.log('监听了');
-    // this.resize();
+    fn();
   });
   resizeObserver.observe(this.parentNode);
   return resizeObserver;
 }
 
+// 刷新空间
 function resize() {
-  console.log('执行了');
   const width = this.parentNode.clientWidth;
   const height = this.parentNode.clientHeight;
   this.canvasSpace.width = width;
   this.canvasSpace.height = height;
+  this.mainSpaceElementInit();
 }
 
 // destroySpace
-export function destroySpace({ parentNode, canvasSpace }) {
-  this.resizeObserver.unobserve(parentNode)
+export function destroySpace({ parentNode, canvasSpace, resizeObserver }) {
+  resizeObserver.unobserve(parentNode);
   parentNode.removeChild(canvasSpace);
   console.log('摧毁了:', canvasSpace);
 }
