@@ -5,6 +5,10 @@
 import { createSpace, destroySpace } from '@/spaceRules';
 const box = ref();
 let space = null;
+
+const props = defineProps({
+  
+})
 onMounted(() => {
   space = new createSpace(box.value, '2d');
   space.init(({ context }) => {
@@ -25,5 +29,6 @@ onBeforeUnmount(() => {
   min-height: 300px;
   width: 100%;
   height: 100%;
+  border: 1px solid $c0;
 }
 </style>
