@@ -1,6 +1,6 @@
 {
   "name": "ldzz-threejs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "## Project setup ``` npm install ```",
   "author": "",
@@ -61,7 +61,6 @@
     "not dead",
     "not ie 11"
   ],
-  "_id": "ldzz-threejs@1.0.0",
   "bugs": {
     "url": "https://github.com/zhimingYao/ldzz-threejs/issues"
   },
