@@ -2,33 +2,41 @@
   <div class="dimension-box" ref="box"></div>
 </template>
 <script setup>
-import { createSpace, destroySpace } from '@/spaceRules';
+import { spaceRules } from '@/spaceRules';
 const box = ref();
 let space = null;
 
-const props = defineProps({
-  
-})
+const props = defineProps({});
 onMounted(() => {
-  space = new createSpace(box.value, '2d');
-  space.init(({ context }) => {
-    console.log(context);
-    const ctx = context;
-    ctx.fillStyle = 'red';
-    ctx.fillRect(10, 10, 50, 50);
-  });
+  space = new spaceRules(box.value, '2d');
+  space.createSpace(space_2d);
+  console.log(space);
 });
 
+/* 2d space */
+const space_2d = ({ context }) => {
+  console.log(context);
+  const ctx = context;
+  ctx.fillStyle = 'red';
+  ctx.fillRect(10, 10, 100, 100);
+  ctx.clearRect(45, 45, 60, 60);
+  ctx.strokeRect(50, 50, 50, 50);
+  ctx.beginPath();
+  ctx.moveTo(175, 150);
+  ctx.lineTo(240, 275);
+  ctx.lineTo(200, 275);
+  // ctx.fill();
+};
+
 onBeforeUnmount(() => {
-  destroySpace(space);
+  space.destroySpace();
 });
 </script>
 <style lang="scss" scoped>
 .dimension-box {
-  min-width: 300px;
-  min-height: 300px;
   width: 100%;
   height: 100%;
   border: 1px solid $c0;
+  overflow: hidden;
 }
 </style>
