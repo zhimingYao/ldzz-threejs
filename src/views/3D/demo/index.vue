@@ -1,6 +1,8 @@
 <template>
   <div class="demo">
-    <d-box></d-box>
+    <div :class="`flex_box_${item} box`" v-for="item in 6" :key="item">
+      <d-box></d-box>
+    </div>
   </div>
 </template>
 
@@ -10,5 +12,9 @@
 .demo {
   width: 100%;
   height: 100%;
+}
+.box {
+  width: 300px;
+  height: 300px;
 }
 </style>

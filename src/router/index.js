@@ -40,11 +40,21 @@ const routes = [
             path: '/3D/study',
             name: 'study',
             meta: {
-              title: '研究',
+              title: '测试',
               icon: 'Document',
               isShow: false,
             },
             component: () => import('@/views/3D/study/index.vue'),
+          },
+          {
+            path: '/3D/study1',
+            name: 'study1',
+            meta: {
+              title: '测试1',
+              icon: 'Document',
+              isShow: false,
+            },
+            component: () => import('@/views/3D/study1/index-one.vue'),
           },
         ],
       },

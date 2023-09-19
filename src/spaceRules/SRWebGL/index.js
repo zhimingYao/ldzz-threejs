@@ -2,4 +2,4 @@
 
 const SR_webgl = {};
 
-export default SR_webgl = {};
+export default SR_webgl
