@@ -190,7 +190,7 @@ const sence_data = {
           // info: {
           //   title: '电脑信息',
           //   Offset: [0, 2, 0],
-          //   scale: [1 / 1000, 1 / 1000, 1 / 1000],
+          //   scale: [1 / 1000, 1 / 1000, 1 / 1000], 
           //   rotation: [0, 0, 0],
           //   content: [
           //     {
@@ -232,7 +232,7 @@ const sence_data = {
           scale: [1000, 1000, 1000],
           position: [-10000, -800, -8000],
           rotation: [0, 0, 0]
-        }
+        } 
       ]
     }
   ],

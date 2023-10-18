@@ -38,6 +38,7 @@ export function addhtml3D(mesh, object) {
     tag.scale.set(...info.scale)
     tag.position.set(...info.Offset)
     tag.rotation.set(...info.rotation)
+    tag.visible = info.visible
     mesh.add(tag)
   }
 }

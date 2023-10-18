@@ -1,5 +1,3 @@
-import { number } from 'echarts'
-
 /* 深拷贝 */
 export function deep(obj, loop = 1) {
   if (typeof obj !== 'object' || loop >= 7) {

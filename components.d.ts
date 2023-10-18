@@ -17,6 +17,7 @@ declare module '@vue/runtime-core' {
     IMdiAccountBox: typeof import('~icons/mdi/account-box')['default']
     'ITwemoji:mirrorBall': typeof import('~icons/twemoji/mirror-ball')['default']
     Layout: typeof import('./src/components/layout/index.vue')['default']
+    ModelView: typeof import('./src/components/modelView/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SidebarItem: typeof import('./src/components/layout/sidebarItem.vue')['default']
