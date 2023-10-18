@@ -7,11 +7,6 @@ const box = ref();
 let space = null;
 
 const props = defineProps({});
-onMounted(() => {
-  space = new spaceRules(box.value, '2d');
-  space.createSpace(space_2d);
-  console.log(space);
-});
 
 /* 2d space */
 const space_2d = ({ context }) => {
@@ -27,6 +22,12 @@ const space_2d = ({ context }) => {
   ctx.lineTo(200, 275);
   // ctx.fill();
 };
+
+onMounted(() => {
+  space = new spaceRules(box.value, '2d');
+  space.createSpace(space_2d);
+  console.log(space);
+});
 
 onBeforeUnmount(() => {
   space.destroySpace();
