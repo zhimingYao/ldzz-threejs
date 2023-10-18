@@ -95,7 +95,7 @@ function createSpotLight(arr) {
   })
   res.forEach(item => {
     const spotLightHelper = new THREE.SpotLightHelper(item)
-    // res.push(spotLightHelper)
+    res.push(spotLightHelper)
   })
   return res
 }

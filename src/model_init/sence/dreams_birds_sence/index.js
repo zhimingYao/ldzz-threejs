@@ -31,14 +31,14 @@ const sence_data = {
     //     position: [-6500, 1500, -5000]
     //   }
     // ],
-    spotLightData: [
-      {
-        name: '聚灯光',
-        params: [0xffffff, 10000000, 8000, Math.PI / 4, 0.0, 2],
-        position: [0, 3000, -5600],
-        target: [0, -1000, -5600]
-      }
-    ]
+    // spotLightData: [
+    //   {
+    //     name: '聚灯光',
+    //     params: [0xffffff, 10000000, 8000, Math.PI / 4, 0.0, 2],
+    //     position: [0, 3000, -5600],
+    //     target: [0, -1000, -5600]
+    //   }
+    // ]
   },
   gltfModels: [
     {

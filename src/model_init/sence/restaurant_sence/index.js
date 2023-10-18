@@ -35,14 +35,14 @@ const sence_data = {
     //     position: [-6500, 1500, -5000]
     //   }
     // ],
-    spotLightData: [
-      {
-        name: '聚灯光',
-        params: [0xffffff, 10000000, 10000, Math.PI / 4, 0.0, 2],
-        position: [-5500, 1300, -4600],
-        target: [-5500, -1000, -4600]
-      }
-    ]
+    // spotLightData: [
+    //   {
+    //     name: '聚灯光',
+    //     params: [0xffffff, 10000000, 10000, Math.PI / 4, 0.0, 2],
+    //     position: [-5500, 1300, -4600],
+    //     target: [-5500, -1000, -4600]
+    //   }
+    // ]
   },
   objModels: [
     {
