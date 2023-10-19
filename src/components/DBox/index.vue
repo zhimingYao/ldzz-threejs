@@ -20,7 +20,7 @@ const space_2d = ({ context }) => {
   ctx.moveTo(175, 150);
   ctx.lineTo(240, 275);
   ctx.lineTo(200, 275);
-  // ctx.fill();
+  ctx.fill();
 };
 
 onMounted(() => {
