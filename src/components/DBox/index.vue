@@ -2,7 +2,7 @@
   <div class="dimension-box" ref="box"></div>
 </template>
 <script setup>
-import { spaceRules } from '@/spaceRules';
+import { SpaceRules } from '@/spaceRules';
 const box = ref();
 let space = null;
 
@@ -24,7 +24,7 @@ const space_2d = ({ context }) => {
 };
 
 onMounted(() => {
-  space = new spaceRules(box.value, '2d');
+  space = new SpaceRules(box.value, '2d');
   space.createSpace(space_2d);
   console.log(space);
 });

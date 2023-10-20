@@ -2,7 +2,7 @@
 
 export const debounce = (fn, delay) => {
   let timer;
-  return function () {
+  return ()=> {
     if (timer) {
       clearTimeout(timer);
     }
