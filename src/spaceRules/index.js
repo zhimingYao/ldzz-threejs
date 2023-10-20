@@ -14,29 +14,23 @@ export class SpaceRules {
   }
   // 初始化
   createSpace(fn) {
-    console.log(this);
-
     const tip = '抱歉，您的浏览器不支持 canvas 元素（这些内容将会在不支持<canvas>元素的浏览器或是禁用了 JavaScript 的浏览器内渲染并展现）';
     const canvas = document.createElement('canvas');
     canvas.innerText = tip;
-    const width = this.parentNode.clientWidth;
-    const height = this.parentNode.clientHeight;
-    canvas.width = width;
-    canvas.height = height;
     this.parentNode.appendChild(canvas);
     const ctx = canvas.getContext(this.spaceType, this.spaceOptions);
     this.canvasSpace = canvas;
     this.context = ctx;
     this.fn = fn;
-    this.resizeObserver = this.resizeObserver();
+    this.resizeObserver = this.handleResizeObserver();
   }
   // 主空间元素初始化
   mainSpaceElementInit() {
     this.fn(this);
   }
   // 监听空间resize事件
-  resizeObserver() {
-    const fn = debounce(this.resize.bind(this), 500);
+  handleResizeObserver() {
+    const fn = debounce(this.resize.bind(this), 100);
     const resizeObserver = new ResizeObserver(() => {
       fn();
     });
@@ -53,7 +47,6 @@ export class SpaceRules {
   }
   // destroySpace
   destroySpace() {
-    console.log(this);
     this.resizeObserver.unobserve(this.parentNode);
     this.parentNode.removeChild(this.canvasSpace);
     console.log('摧毁了:', this.canvasSpace);
