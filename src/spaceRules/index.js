@@ -1,8 +1,12 @@
 import { debounce } from '@/uilts/tools';
 import SRWebGL from './SRWebGL';
 
-// spaceRules
-// spaceRules
+/**
+ * 空间声明类
+ * @constructor
+ * @param {Element} ele - 插入创建canvas的元素
+ * @param {}
+ */
 export class SpaceRules {
   constructor(ele, type, options) {
     this.parentNode = ele;
