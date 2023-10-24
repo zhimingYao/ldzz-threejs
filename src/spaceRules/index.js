@@ -1,13 +1,16 @@
 import { debounce } from '@/uilts/tools';
 import SRWebGL from './SRWebGL';
 
-/**
- * 空间声明类
- * @constructor
- * @param {Element} ele - 插入创建canvas的元素
- * @param {}
- */
 export class SpaceRules {
+  /**
+   * 空间声明类
+   * @constructor
+   * @param {Element} ele - 插入创建canvas的元素
+   * @param {string} type - cancas上下文类型 2d/webgl/webgl2 
+   * @param {object} options - 上下文属性 [https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/getContext]
+   * @param {boolean} options.alpha - 如果设置为false, 浏览器将认为canvas背景总是不透明的，这样可以加速绘制透明的内容和图片。
+   * 
+   */
   constructor(ele, type, options) {
     this.parentNode = ele;
     this.spaceType = type;
